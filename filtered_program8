@@ -1,3 +1,8 @@
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 1
+
+
 /*////////////////////////////////////////////////////////////////////////////////////////
 //   Patrick Mulvihill														CMPT 353	//
 //	 Systems Programming: Program 8														//
@@ -49,11 +54,21 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 /*////////////////////////////////////////////////////////
 //  main() is the driver for this program. It prompts 	//
 //  the user for the polynomials and makes calls to 	//
-//  createList() and addLists()							// 
+//  createList() and addLists(							// 
 //														//
 // Variable Directory:									//
 //	h1 - h3		heads for the various linked lists		//
 //  t1 - t3		tails for various linked lists			//
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 2
+
+
 //  iter 		iterates through linked lists to free	//
 //				the allocated memory					//
 //														//
@@ -110,6 +125,16 @@ int main()
 	{
 		next = iter -> next;
 		free(iter);
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 3
+
+
 		iter = iter -> next;
 	}
 	free(iter);
@@ -166,6 +191,16 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 				*h3 = x;
 				*t3 = x;
 			}
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 4
+
+
 			else
 			{
 				(*t3) -> next = x;
@@ -193,7 +228,7 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 			}
 			c2 = &((*c2) -> next);
 		}
-		else//Exp are the same
+		else
 		{
 			node * x = malloc(sizeof(struct node)); 
 			
@@ -222,6 +257,16 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 			{
 				(*t3) -> next = (*c2) -> next;
 				break;
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 5
+
+
 			}
 			if ((*c2) -> next != NULL)
 			{
@@ -278,6 +323,16 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 			{
 				*h3 = x;
 				*t3 = x;
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 6
+
+
 			}
 			else
 			{
@@ -311,9 +366,9 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 void createList(node ** head, node ** tail){
 	char poly[MAX];
 	node * newNode = NULL;
-	i = 0; 
+	i = 0;
 	fgets(poly, MAX, stdin);
-	//int i = 0; 
+	//int i = 0; using global variable instead
 	//Loop through entire polynomial
 	while (poly[i] != ';')
 	{
@@ -323,7 +378,7 @@ void createList(node ** head, node ** tail){
 		{
 			//Assume createPolynomial creates a node
 			//Otherwise wouldve exited inside function
-			newNode = createPolynomial(poly, );
+			newNode = createPolynomial(poly);
 			//Append newNode to the linked list
 			//Need to check head and tail ptrs
 			appendToList(newNode, (head), (tail));
@@ -334,6 +389,16 @@ void createList(node ** head, node ** tail){
 			//No sign error
 			printf("You forgot a sign. Program terminating.\n");
 			exit(-1);
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 7
+
+
 		}
 	}
 	printf("The polynomial you've entered is:\n %s \n", poly);
@@ -390,6 +455,16 @@ node * createPolynomial(char * poly){
 	node * x = malloc(sizeof(struct node)); 
 
 	i++;
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 8
+
+
 	if (poly[i] != ' ')
 	{
 		printf("Missing a space after operator - program terminating.\n");
@@ -446,6 +521,16 @@ node * createPolynomial(char * poly){
 	i++;
 	if (poly[i] != ' ')
 	{
+
+
+
+
+
+
+
+2015-12-10 19:31                Patrick Mulvihill                 Page 9
+
+
 		printf("Missing a space after operator - program terminating.\n");
 		exit(-1);
 	}
@@ -462,3 +547,61 @@ node * createPolynomial(char * poly){
 
 	return x;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Polynomials should be typed in the form: "+ 6 * X ^ 2 - 3 * X ^ 1 ;"
+Enter the first polynomial terminated with a ';' : 
+The polynomial you've entered is:
+ + 6 * X ^ 2 - 3 * X ^ 1 ;
+ 
+
+Enter the second polynomial terminated with a ';' : 
+The polynomial you've entered is:
+ + 2 * X ^ 3 - 6 * X ^ 2 + 4 * X ^ 0 ;
+ 
+
+The sum of those polynomials is:
+ + 2 * X ^ 3  -3 * X ^ 1  + 4 * X ^ 0 ;
