@@ -291,11 +291,6 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 			
 		}
 	}
-	//Both null, clean up ?
-	else
-	{
-		printf("Something went wrong.");	
-	}
 }
 
 /*////////////////////////////////////////////////////////
@@ -323,7 +318,7 @@ void createList(node ** head, node ** tail){
 		{
 			//Assume createPolynomial creates a node
 			//Otherwise wouldve exited inside function
-			newNode = createPolynomial(poly, );
+			newNode = createPolynomial(poly);
 			//Append newNode to the linked list
 			//Need to check head and tail ptrs
 			appendToList(newNode, (head), (tail));
