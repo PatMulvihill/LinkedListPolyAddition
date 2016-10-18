@@ -1,19 +1,19 @@
 /*////////////////////////////////////////////////////////////////////////////////////////
-//   Patrick Mulvihill														CMPT 353	//
-//	 Systems Programming: Program 8														//
-//   																					//
-//   This program will take in two polynomials from a user in a very specific form.		//
-//	 It will add the coefficients and exponenents from each monomial in the poly-		//
+//   Patrick Mulvihill							CMPT 353	//
+//   Systems Programming: Program 8							//
+//   											//
+//   This program will take in two polynomials from a user in a very specific form.	//
+//   It will add the coefficients and exponenents from each monomial in the poly-	//
 //   nomial into a node which will be appended to a linked list for that polynomial.	//
 //   The two linked lists of monomials (to make a polynomial) will be added so that 	//
-//	 the result is the first polynomial + the second polynomial.  The memory allocated	//
+//   the result is the first polynomial + the second polynomial.  The memory allocated	//
 //   for the linked lists will be freed, and the result polynomial will be displayed	//
-//   in the form in which the original polynomials were entered.						//
-//   																				  	//
-//   Variable Directory (globals):														//
-//   MAX			constant that holds maximum amount of characters in polynomial		//
-//   i 				iterator for looping through each character in polynomial string	//
-//																						//
+//   in the form in which the original polynomials were entered.			//
+//   										  	//
+//   Variable Directory (globals):							//
+//   MAX	constant that holds maximum amount of characters in polynomial		//
+//   i 		iterator for looping through each character in polynomial string	//
+//											//
 ////////////////////////////////////////////////////////////////////////////////////////*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,12 +22,12 @@
 
 /*////////////////////////////////////////////////////////
 //  This struct is for the nodes of the linked list.	//
-//														//
-// Variable Directory:									//
-// coef 	coefficient of the monomial					//
-// exp		exponent of the monomial					//
-// next		points to next node in linked list 			//
-//														//
+//							//
+// Variable Directory:					//
+// coef 	coefficient of the monomial		//
+// exp		exponent of the monomial		//
+// next		points to next node in linked list 	//
+//							//
 ////////////////////////////////////////////////////////*/
 typedef struct node
 {
@@ -49,14 +49,14 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 /*////////////////////////////////////////////////////////
 //  main() is the driver for this program. It prompts 	//
 //  the user for the polynomials and makes calls to 	//
-//  createList() and addLists()							// 
-//														//
-// Variable Directory:									//
-//	h1 - h3		heads for the various linked lists		//
-//  t1 - t3		tails for various linked lists			//
-//  iter 		iterates through linked lists to free	//
-//				the allocated memory					//
-//														//
+//  createList() and addLists()				// 
+//							//
+// Variable Directory:					//
+//  h1 - h3	heads for the various linked lists	//
+//  t1 - t3	tails for various linked lists		//
+//  iter 	iterates through linked lists to free	//
+//		the allocated memory			//
+//							//
 ////////////////////////////////////////////////////////*/
 int main()
 {
@@ -137,13 +137,13 @@ int main()
 /*////////////////////////////////////////////////////////
 //  addLists() adds h1 and h2 together to get sum of 	//
 //  the user's entered polynomials.  It places sum in 	//
-//  nodes in it's own linked list (h3)					//
-//														//
-// Variable Directory:									//
-//  c1		current node in h1 (keeps track of where 	//
-//				we are in h1)							//
-//  c2		current node in h2							//							
-//														//
+//  nodes in it's own linked list (h3)			//
+//							//
+// Variable Directory:					//
+//  c1	current node in h1 (keeps track of where 	//
+//	we are in h1)					//
+//  c2	current node in h2				//							
+//							//
 ////////////////////////////////////////////////////////*/
 
 void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node ** t3)
@@ -295,13 +295,13 @@ void addLists(node ** h1, node ** t1, node ** h2, node ** t2, node ** h3, node *
 
 /*////////////////////////////////////////////////////////
 //  createList() takes the contents of the polynomials	//
-//	that the user supplies and separates the coef and	//
-//   exp to create a linked list for that poly			//
-//														//
-// Variable Directory:									//
+//   that the user supplies and separates the coef and	//
+//   exp to create a linked list for that poly		//
+//							//
+// Variable Directory:					//
 //  there are no variables declared here that aren't	//
-//  present elsewhere									//
-//														//
+//  present elsewhere					//
+//							//
 ////////////////////////////////////////////////////////*/
 void createList(node ** head, node ** tail){
 	char poly[MAX];
@@ -335,14 +335,14 @@ void createList(node ** head, node ** tail){
 }
 
 /*////////////////////////////////////////////////////////
-//  appendToList() handles linked list manipulation		//
+//  appendToList() handles linked list manipulation	//
 //  (ensures that head and tail are pointing to right	//
-//	places so that lists can be traversed correctly)	//
-//														//
-// Variable Directory:									//
-// there are no variables declared here that aren't		//
-//  present elsewhere									//
-//														//
+//  places so that lists can be traversed correctly)	//
+//							//
+// Variable Directory:					//
+// there are no variables declared here that aren't	//
+//  present elsewhere					//
+//							//
 ////////////////////////////////////////////////////////*/
 void appendToList(node * newNode, node ** head, node ** tail){
 
@@ -372,12 +372,12 @@ void appendToList(node * newNode, node ** head, node ** tail){
 //  createPolynomial() makes sure that the polynomial	//
 //  entered by the user is in the correct form, and 	//
 //  changes the case from string to int so that exp and	//
-//  coef can be manipulated in linked list 				//
-//														//
-// Variable Directory:									//
-// there are no variables declared here that aren't		//
-//  present elsewhere									//
-//														//
+//  coef can be manipulated in linked list 		//
+//							//
+// Variable Directory:					//
+// there are no variables declared here that aren't	//
+//  present elsewhere					//
+//							//
 ////////////////////////////////////////////////////////*/
 node * createPolynomial(char * poly){
 
